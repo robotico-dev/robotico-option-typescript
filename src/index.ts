@@ -1,5 +1,35 @@
 /**
- * @robotico/option — Option (Maybe) type: Some(value) | None.
- * Placeholder; implement Some/None, map, bind, match, getValueOr.
+ * @robotico/option — Option (Maybe) type for TypeScript: Some(value) | None.
+ * Aligned with Robotico.Option (C#) and dev.robotico.option (Kotlin).
+ *
+ * Exports: Option type; some/none, isSome/isNone, tryGetValue; match, map, bind;
+ * getValueOr/getValueOrElse, fromNullable; tap, tapNone, recoverWith, getValueOrDefault,
+ * toNullable; mapAsync, bindAsync.
+ *
+ * @packageDocumentation
  */
-export const OPTION_VERSION = "0.1.0";
+
+export type { Option } from "./option.js";
+export {
+  none,
+  some,
+  isSome,
+  isNone,
+  tryGetValue,
+  match,
+  map,
+  bind,
+  getValueOr,
+  getValueOrElse,
+  fromNullable,
+} from "./option.js";
+
+export {
+  tap,
+  tapNone,
+  recoverWith,
+  getValueOrDefault,
+  toNullable,
+} from "./extensions.js";
+
+export { mapAsync, bindAsync } from "./option-async.js";
