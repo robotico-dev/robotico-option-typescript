@@ -1,6 +1,6 @@
 {
   "name": "@robotico-dev/option",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Robotico Option — Option (Maybe) type for TypeScript: Some(value) | None.",
   "type": "module",
   "main": "dist/index.js",
