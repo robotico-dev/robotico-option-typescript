@@ -1,11 +1,11 @@
-# @robotico/option
+# @robotico-dev/option
 
 **Option (Maybe)** type for TypeScript: `Some(value) | None`. Immutable; use `match`, `map`, and `bind` to transform. Aligned with Robotico.Option (C#) and dev.robotico.option (Kotlin).
 
 ## Install
 
 ```bash
-npm install @robotico/option
+npm install @robotico-dev/option
 ```
 
 **Requirements:** Node.js >= 18.
@@ -25,7 +25,7 @@ import {
   getValueOrDefault,
   isSome,
   isNone,
-} from "@robotico/option";
+} from "@robotico-dev/option";
 
 const a = some(42);
 const b = fromNullable(null); // none
@@ -58,7 +58,7 @@ getValueOrDefault(a);   // 42 | undefined
 ## Extensions
 
 ```ts
-import { tap, tapNone, recoverWith, toNullable } from "@robotico/option";
+import { tap, tapNone, recoverWith, toNullable } from "@robotico-dev/option";
 
 tap(opt, (v) => console.log(v));   // side effect when Some; returns same option
 tapNone(opt, () => console.log("none"));
@@ -69,7 +69,7 @@ toNullable(opt);                    // value or null
 ## Async
 
 ```ts
-import { mapAsync, bindAsync } from "@robotico/option";
+import { mapAsync, bindAsync } from "@robotico-dev/option";
 
 const opt = some(userId);
 await mapAsync(opt, (id) => fetchUser(id));  // Promise<Option<User>>
