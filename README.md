@@ -1,5 +1,9 @@
 # @robotico/option-typescript
 
+
+[![Woodpecker CI](https://dvalin.robotico.dev/api/badges/robotico/robotico-option-typescript/status.svg)](https://dvalin.robotico.dev/robotico/robotico-option-typescript)
+
+[![robotico-downloads](https://img.shields.io/badge/registry-download.robotico.dev-0ea5e9?logo=npm)](https://download.robotico.dev/npm/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/) [![ESM](https://img.shields.io/badge/module-ESM-FFCA28)](https://nodejs.org/api/esm.html) [![Vitest](https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white)](https://vitest.dev/) [![ESLint](https://img.shields.io/badge/lint-ESLint-4B32C3?logo=eslint&logoColor=white)](https://eslint.org/)
 
 **Option (Maybe)** type for TypeScript: `Some(value) | None`. Immutable; use `match`, `map`, and `bind` to transform. Aligned with Robotico.Option (C#) and dev.robotico.option (Kotlin).
@@ -7,7 +11,8 @@
 ## Install
 
 ```bash
-npm install @robotico/option-typescript
+# Consumer: scope @robotico/* to robotico-downloads (see typescript/.npmrc.robotico-downloads.example)
+npm install @robotico/option-typescript --registry https://download.robotico.dev/npm/
 ```
 
 **Requirements:** Node.js >= 18.
