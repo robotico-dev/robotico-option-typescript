@@ -1,0 +1,40 @@
+# Woodpecker — @robotico/option-typescript
+# Brokkr (forge) → dvalin (CI) → metal npm → https://download.robotico.dev/npm/
+
+when:
+  - event: pull_request
+  - event: push
+    branch: main
+
+steps:
+  verify:
+    image: mirror.gcr.io/library/node:20-bookworm
+    commands:
+      - |
+        test -f package.json || { echo "MUST - package.json with version field"; exit 1; }
+      - npm ci
+      - npm run verify
+    when:
+      - event: [pull_request, push]
+
+  release:
+    image: mirror.gcr.io/library/node:20-bookworm
+    environment:
+      ROBOTICO_REGISTRY_NPM_HOST: /var/lib/robotico/robotico-registry/npm
+      GITEA_TOKEN:
+        from_secret: gitea_token
+    commands:
+      - apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends git ca-certificates docker.io
+      - |
+        test -f package.json || { echo "MUST - package.json with version field"; exit 1; }
+      - npm ci
+      - npm run verify
+      - bash scripts/woodpecker-release.sh
+    when:
+      - event: push
+        branch: main
+        path:
+          exclude:
+            - README.md
+            - CONTRIBUTING.md
+            - CHANGELOG.md

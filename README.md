@@ -1,4 +1,4 @@
-# @robotico-dev/option
+# @robotico/option-typescript
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/) [![ESM](https://img.shields.io/badge/module-ESM-FFCA28)](https://nodejs.org/api/esm.html) [![Vitest](https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white)](https://vitest.dev/) [![ESLint](https://img.shields.io/badge/lint-ESLint-4B32C3?logo=eslint&logoColor=white)](https://eslint.org/)
 
@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install @robotico-dev/option
+npm install @robotico/option-typescript
 ```
 
 **Requirements:** Node.js >= 18.
@@ -27,7 +27,7 @@ import {
   getValueOrDefault,
   isSome,
   isNone,
-} from "@robotico-dev/option";
+} from "@robotico/option-typescript";
 
 const a = some(42);
 const b = fromNullable(null); // none
@@ -60,7 +60,7 @@ getValueOrDefault(a);   // 42 | undefined
 ## Extensions
 
 ```ts
-import { tap, tapNone, recoverWith, toNullable } from "@robotico-dev/option";
+import { tap, tapNone, recoverWith, toNullable } from "@robotico/option-typescript";
 
 tap(opt, (v) => console.log(v));   // side effect when Some; returns same option
 tapNone(opt, () => console.log("none"));
@@ -71,7 +71,7 @@ toNullable(opt);                    // value or null
 ## Async
 
 ```ts
-import { mapAsync, bindAsync } from "@robotico-dev/option";
+import { mapAsync, bindAsync } from "@robotico/option-typescript";
 
 const opt = some(userId);
 await mapAsync(opt, (id) => fetchUser(id));  // Promise<Option<User>>
@@ -88,4 +88,4 @@ Run `npm run docs` to generate API documentation in `docs/` (requires [TypeDoc](
 
 ## License
 
-MIT. See [repository](https://github.com/robotico-dev/robotico-option-typescript) for more.
+MIT. See [repository](https://brokkr.robotico.dev/robotico/robotico-option-typescript) for more.

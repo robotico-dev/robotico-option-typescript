@@ -2,12 +2,12 @@
 
 ## Versioning
 
-This package follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html) (semver). Update `CHANGELOG.md` for every release.
+Semantic Versioning — update `CHANGELOG.md` for every release.
 
-## Quality bar
+**Woodpecker (Brokkr → dvalin):** bump `"version"` in `package.json` only, merge to `main` on `https://brokkr.robotico.dev/robotico/robotico-option-typescript`. CI on `https://dvalin.robotico.dev` creates tag `v{version}` and copies the pack tarball to Verdaccio metal (`/var/lib/robotico/robotico-registry/npm/`), served at `https://download.robotico.dev/npm/`. Do not push release tags manually.
 
-- **Lint:** `npm run lint` (ESLint with type-aware rules, zero warnings).
-- **Format:** `npm run format:check` (Prettier).
-- **Tests:** `npm run test` (Vitest); include unit tests and functor/monad law tests.
-- **Coverage:** `npm run test:coverage` must meet configured thresholds (e.g. 90% branches/functions/lines/statements).
-- **Build:** `npm run build` must succeed with strict TypeScript (`strict`, `noUncheckedIndexedAccess`).
+**dvalin secret:** `gitea_token` (Brokkr push for tags). Register the repo on dvalin once via `scripts/activate-woodpecker-dvalin.sh`.
+
+## Local verify
+
+`npm run verify` (lint, format, build, coverage, docs as configured in `package.json`).

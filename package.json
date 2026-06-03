@@ -1,5 +1,5 @@
 {
-  "name": "@robotico-dev/option",
+  "name": "@robotico/option-typescript",
   "version": "1.0.1",
   "description": "Robotico Option — Option (Maybe) type for TypeScript: Some(value) | None.",
   "type": "module",
@@ -34,10 +34,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/robotico-dev/robotico-option-typescript.git"
+    "url": "git+https://brokkr.robotico.dev/robotico/robotico-option-typescript.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/",
+    "registry": "https://download.robotico.dev/npm/",
     "access": "public"
   },
   "devDependencies": {
